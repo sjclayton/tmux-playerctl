@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 main() {
-  playerctl metadata --format "{{ title }}"
+  playerctl -p spotify metadata --format "{{ title }}"
 }
 
 main
