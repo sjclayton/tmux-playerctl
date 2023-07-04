@@ -15,7 +15,7 @@ short_append_chars="..."
 main() {
   local full shortened info_char_count max_chars append
   max_chars=$(get_tmux_option "$short_max_length_string" "$short_max_length")
-  full=$(playerctl -p spotify metadata --format "{{ artist }} - {{ title }}")
+  full=$(playerctl -p spotify metadata --format "{{ artist }} - {{ title }}" | tr '[:upper:]' '[:lower:]')
   shortened=${full:0:$max_chars}
   info_char_count=${#full}
   local append=""
